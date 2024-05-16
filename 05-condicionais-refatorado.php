@@ -27,27 +27,28 @@ if($numero < 100){
 <?php
 
 $produto = "Geladeira";
- $qtdEmEstoque = 0; 
+ $qtdEmEstoque = 10; 
  $qtdCritica = 2; 
 ?>
     <h3>Produto: <?=$produto?></h3>
     <h3>Estoque: <?=$qtdEmEstoque?></h3>
 
 <?php
+if ( $qtdEmEstoque < $qtdCritica ){ ?>
+    <p class="alert alert-warning">É necessário repor</p>
+<?php if ($qtdEmEstoque == 0) { ?>        
 
-if ($qtdEmEstoque < $qtdCritica) {
-    echo "<p class=\"alert alert-warning\">É necessário repor</p>";
-
-    if ($qtdEmEstoque == 0) {
-        echo "<p class=\"alert alert-danger\">REPOR AGORA!!!</p>";
+        <p class="alert alert-danger">REPOR AGORA!!!</p>
+    <?php 
     }
 } else {
-    
-    echo "<p class=\"alert alert-success\">Estoque normal</p>";
-   
+    ?>
+    <p class="alert alert-success">Estoque normal</p>
+<?php   
 }
-
 ?>
+
+<hr>
 
 <h2>Encadeada (usa <code>if, else, elseif</code>)</h2>
 <?php
