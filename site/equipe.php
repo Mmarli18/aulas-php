@@ -1,4 +1,6 @@
-<?php include "cabecalho.php"; ?>
+<?php 
+$tituloPagina = "Equipe";
+include "cabecalho.php"; ?>
 <h2>Nossa equipe</h2>
 <ul>
     <li>Tony Stark</li>
