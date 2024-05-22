@@ -18,7 +18,7 @@ $email = $_POST['email'];
 $nascimento = $_POST['nascimento'];
 $mensagem = $_POST['mensagem'];
 
-// Operador || siginifica OU
+// Operador (||) siginifica OU
 
 if( empty ($nome) || empty($email) ){
     ?>
@@ -32,8 +32,16 @@ if( empty ($nome) || empty($email) ){
 <ul>
     <li>Nome: <?=$nome?> </li>
     <li>E-mail: <?=$email?> </li>
+
+    <!-- OPERADOR !(NÃO/NEGAÇÃO) SE NÃO ESTIVER VAZIO (EMPTY) -->
+    <?php if (!empty($nascimento) ){ ?>
     <li>Data de Nascimento: <?=$nascimento?> </li>
+    <?php }?>
+
+    <?php if (!empty($mensagem) ){ ?>
     <li>Mensagem: <?=$mensagem?> </li>
+    <?php }?>
+
 </ul>
 <?php } ?>
 </body>
